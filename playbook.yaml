@@ -1,0 +1,6 @@
+---
+- name: Test connectivity to Ubuntu clients
+  hosts: ubuntu_clients
+  tasks:
+    - name: Ping the Ubuntu client
+      ping:
