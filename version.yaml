@@ -1,0 +1,12 @@
+---
+- name: Check Ubuntu version on remote host
+  hosts: all
+  gather_facts: no
+  tasks:
+    - name: Get Ubuntu version
+      shell: cat /etc/os-release
+      register: ubuntu_version
+
+    - name: Print Ubuntu version
+      debug:
+        msg: "{{ ubuntu_version.stdout }}"
